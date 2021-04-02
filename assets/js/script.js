@@ -10,7 +10,18 @@ function generateRandomUpper() {
   return String.fromCharCode(Math.floor(Math.random() * 26) + 65)
 }
 
-console.log (generateRandomUpper())
+function generateRandomSpecial() {
+  return String.fromCharCode(Math.floor(Math.random() * 15) + 33)
+}
+
+function generateRandomNumber() {
+  return String.fromCharCode(Math.floor(Math.random() * 10) + 48)
+}
+
+console.log(generateRandomLower());
+console.log(generateRandomUpper());
+console.log(generateRandomSpecial());
+console.log(generateRandomNumber());
 
 
 // Get references to the #generate element
