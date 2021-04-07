@@ -9,19 +9,17 @@ const randomFunction = {
   number: generateRandomNumber
 };
 
+
 // Generator Functions charset from https://www.w3schools.com/html/html_charset.asp
 function generateRandomLower() {
   return String.fromCharCode(Math.floor(Math.random() * 26) + 97)
 }
-
 function generateRandomUpper() {
   return String.fromCharCode(Math.floor(Math.random() * 26) + 65)
 }
-
 function generateRandomSpecial() {
   return String.fromCharCode(Math.floor(Math.random() * 15) + 33)
 }
-
 function generateRandomNumber() {
   return String.fromCharCode(Math.floor(Math.random() * 10) + 48)
 }
@@ -61,16 +59,16 @@ function generatePassword() {
     var special = passwordOptions.hasSpecial
     var number = passwordOptions.hasNumber
     var passwordLength = passwordOptions.passwordLength
+
   // add how many condition types to generate
   const passwordRequirements = lower + upper + special + number
-    console.log(passwordRequirements)
+
   // make passwordOptions object into an array with true/false arrays built in each array
   const passwordOptionsArray = [{lower}, {upper}, {special}, {number}].filter(item => Object.values(item)[0])
   // start over if user hits all cancels
   if(passwordRequirements === 0){
       return '';
     }
-    console.log(passwordOptionsArray)
   
   // forLoop to build the password with all requirments
   for(let i=0; i<passwordLength; i+=passwordRequirements) {
@@ -79,18 +77,11 @@ function generatePassword() {
         generatedPassword += randomFunction[randomKeys]();
       });
   }
-  
-  // use built password as the final password with correct length and return result to generatePassword function
+
+    // use built password as the final password with correct length and return result to generatePassword function
   const finalPassword = generatedPassword.slice(0, passwordLength)
-    console.log(finalPassword)
   return finalPassword;
 }
-
-
-
-
-
-
 
 
 // Get references to the #generate element (DOM element generate password button)
