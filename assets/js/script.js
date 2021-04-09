@@ -28,7 +28,7 @@ function generatePasswordOptions(){
 // Generate Password with passwordOption and randomFunction numbers
 function generatePassword() {  
 
-  // Tie my generator functions in to an object
+  // Tie my generator functions in to an object- makes it easy to move the functions around
   const randomFunction = {
     lower: generateRandomLower,
     upper: generateRandomUpper,
@@ -65,14 +65,14 @@ function generatePassword() {
   // add how many condition types to generate
   const passwordRequirements = lower + upper + special + number
 
-  // make passwordOptions object into an array with true/false arrays built in each array
+  // make passwordOptions object into an array filter out false values
   const passwordOptionsArray = [{lower}, {upper}, {special}, {number}].filter(item => Object.values(item)[0])
-  // start over if user hits all cancels
+  // start over if user hits all cancels on prompts
     if(passwordRequirements === 0){
         return '';
       }
   
-  // forLoop to build the password with all requirments
+  // forLoop to build the password with all requirments using a key method and foreach. Learned about usind foreach for traversemedia
   for(let i=0; i<passwordLength; i+=passwordRequirements) {
       passwordOptionsArray.forEach(item => {
         const randomKeys = Object.keys(item)[0];          
@@ -84,6 +84,10 @@ function generatePassword() {
   const finalPassword = generatedPassword.slice(0, passwordLength)
   return finalPassword;
 }
+
+// end of my code
+
+
 
 
 // Provided Code -
