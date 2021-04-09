@@ -9,7 +9,7 @@ https://cwinters87.github.io/password-generator/
 
 ### The site should render as such:
 
-![passwordgenerator](./assests/images/passwordgen.png)
+![passwordgenerator](./assets/images/passwordgen.png)
 
 
 
